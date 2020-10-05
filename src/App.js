@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
+import SearchForm from "./components/SearchForm";
+import CountryList from "./components/CountryList";
 
-function App() {
+const App = () => {
+  const [countries, setCountries] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    axios.get("https://restcountries.eu/rest/v2/all").then((response) => {
+      setCountries(response.data);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="header">
+        <h1>Country info</h1>
+      </div>
+
+      <SearchForm setSearch={setSearch} />
+      <CountryList
+        countries={countries}
+        setSearch={setSearch}
+        search={search}
+      />
     </div>
   );
-}
+};
 
 export default App;

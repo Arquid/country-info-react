@@ -1,38 +1,96 @@
-.App {
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 450px;
+}
+
+h1 {
+  text-shadow: 2px 2px 2px #cccccc;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label {
+  display: block;
+  margin-bottom: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #e8eeef;
+  color: black;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.list {
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.list:hover {
+  font-size: 30px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info {
+  text-align: center;
+}
+
+.card {
+  border: 1px solid black;
+}
+
+.card-infobox {
+  border-top: 1px solid black;
+}
+
+img {
+  width: 70%;
+  border: 1px solid black;
+}
+
+li {
+  list-style-type: none;
+  text-align: left;
+  padding: 5px;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+button {
+  position: relative;
+  display: block;
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  margin: 0 auto;
+  background: #1662a0;
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid #1a5c92;
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: #2681cc;
+  cursor: pointer;
 }
